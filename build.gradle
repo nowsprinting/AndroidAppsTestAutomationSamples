@@ -6,9 +6,7 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:0.11.+'
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+        classpath 'com.uphyca.gradle:gradle-android-aspectj-plugin:0.9.+'
     }
 }
 
@@ -16,6 +14,10 @@ allprojects {
     repositories {
         mavenCentral()
     }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.12'
 }
 
 apply plugin: 'android-reporting'
