@@ -1,7 +1,7 @@
 AndroidAppsTestAutomationSamples
 ================================
 
-@IT連載『モバイルアプリテスト自動化ツール』（仮）サンプルコード for Android
+@IT連載『Android/iOS システムテスト自動化ツール徹底比較』（仮）サンプルコード for Android
 
 
 ##ビルド確認環境
@@ -11,8 +11,8 @@ AndroidAppsTestAutomationSamples
 - Android SDK Build-tools r19.1
 - Android SDK 4.4.2(API level 19)
 - Android NDK r9d(March 2014)
-- Gradle 1.12 + Gradle plugin for Android 0.11.0
-- Android Studio 0.6.0
+- Gradle 1.12 + Gradle plugin for Android 0.11.1
+- Android Studio 0.6.1
 
 
 ##ライセンス

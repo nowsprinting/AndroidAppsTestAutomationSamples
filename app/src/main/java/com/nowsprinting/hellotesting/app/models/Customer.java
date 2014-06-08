@@ -1,31 +1,17 @@
 package com.nowsprinting.hellotesting.app.models;
 
-/** 性別 */
-enum Gender{
-    GenderMale,     //男性
-    GenderFemale    //女性
-}
-
-/** マーケティング区分 */
-enum Division{
-    DivisionM1,     //M1層（男性20-34歳）
-    DivisionM2,     //M2層（男性35-49歳）
-    DivisionM3,     //M3層（男性50歳以上）
-    DivisionF1,     //F1層（女性20-34歳）
-    DivisionF2,     //F2層（女性35-49歳）
-    DivisionF3,     //F3層（女性50歳以上）
-    DivisionC,      //C層（男女4-12歳）
-    DivisionT,      //T層（男女13-19歳）
-    DivisionNone    //分類外
-}
-
-
 /**
  * サンプルの顧客情報管理クラス
  *
  * @author Koji Hasegawa
  */
 public class Customer {
+
+    /** idのカウンタ */
+    static int sLastId = 0;
+
+    /** ユニークなidentifier */
+    String mId;
 
     /** 顧客名 */
     String mName;
@@ -40,12 +26,24 @@ public class Customer {
     Integer mAge;
 
     /**
+     * Default Constructor
+     */
+    public Customer(){
+        mId = Integer.toString(sLastId++);
+    }
+
+    /**
      * Constructor
      *
      * @param name
+     * @param gender
+     * @param age
      */
-    public Customer(String name){
+    public Customer(String name, Gender gender, int age){
+        mId = Integer.toString(sLastId++);
         mName = name;
+        mGender = gender;
+        mAge = age;
     }
 
     /**
@@ -139,6 +137,10 @@ public class Customer {
     @Override
     public String toString(){
         return mName;
+    }
+
+    public String getId() {
+        return mId;
     }
 
     public String getName() {

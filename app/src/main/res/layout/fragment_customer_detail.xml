@@ -1,4 +1,4 @@
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/customer_detail"
     style="?android:attr/textAppearanceLarge"
@@ -6,4 +6,90 @@
     android:layout_height="match_parent"
     android:padding="16dp"
     android:textIsSelectable="true"
-    tools:context=".CustomerDetailFragment" />
+    tools:context=".CustomerDetailFragment"
+    tools:ignore="Orientation">
+
+    <TableRow android:layout_marginTop="8dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/labelName"
+            android:id="@+id/labelName"
+            android:layout_column="0" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:id="@+id/name"
+            android:layout_column="1"
+            android:layout_span="3" />
+    </TableRow>
+
+    <TableRow android:layout_marginTop="8dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/labelEmail"
+            android:id="@+id/labelEmail"
+            android:layout_column="0" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:id="@+id/email"
+            android:layout_column="1"
+            android:layout_span="3" />
+    </TableRow>
+
+    <TableRow android:layout_marginTop="8dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/labelGender"
+            android:id="@+id/labelGender2"
+            android:layout_column="0" />
+
+        <RadioGroup
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/gender"
+            android:orientation="horizontal"
+            android:layout_column="1">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/labelGenderMale"
+                android:id="@+id/genderMale" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/labelGenderFemale"
+                android:id="@+id/genderFemale" />
+            </RadioGroup>
+    </TableRow>
+
+    <TableRow android:layout_marginTop="8dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/labelAge"
+            android:id="@+id/labelAge"
+            android:layout_column="0" />
+
+        <NumberPicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/agePicker"
+            android:layout_column="1"
+            android:layout_span="3" />
+    </TableRow>
+
+</TableLayout>

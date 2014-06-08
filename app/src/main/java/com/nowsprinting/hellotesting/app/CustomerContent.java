@@ -1,6 +1,7 @@
 package com.nowsprinting.hellotesting.app;
 
 import com.nowsprinting.hellotesting.app.models.Customer;
+import com.nowsprinting.hellotesting.app.models.Gender;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -26,13 +27,14 @@ public class CustomerContent {
 
     private static void addItem(Customer customer) {
         ITEMS.add(customer);
-        ITEM_MAP.put(customer.getName(), customer);
+        ITEM_MAP.put(customer.getId(), customer);
     }
 
     //TODO: It's Dummy
     static {
         // Add 3 sample items.
-        addItem(new Customer("Mike"));
-        addItem(new Customer("Tom"));
+        addItem(new Customer("Newton Geizler", Gender.GenderMale, 35));
+        addItem(new Customer("Hermann Gottlieb", Gender.GenderMale, 34));
+        addItem(new Customer("Mako Mori", Gender.GenderFemale, 22));
     }
 }

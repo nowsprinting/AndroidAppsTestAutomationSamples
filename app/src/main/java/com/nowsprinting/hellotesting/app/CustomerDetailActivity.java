@@ -6,7 +6,6 @@ import android.app.Activity;
 
 import android.view.MenuItem;
 
-
 /**
  * An activity representing a single Customer detail screen. This
  * activity is only used on handset devices. On tablet-size devices,

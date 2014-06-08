@@ -115,7 +115,7 @@ public class CustomerListFragment extends ListFragment {
 
         // Notify the active callbacks interface (the activity, if the
         // fragment is attached to one) that an item has been selected.
-        mCallbacks.onItemSelected(CustomerContent.ITEMS.get(position).getName());
+        mCallbacks.onItemSelected(CustomerContent.ITEMS.get(position).getId());
     }
 
     @Override

@@ -173,4 +173,32 @@ public class CustomerTest extends AndroidTestCase{
         assertEquals(Division.DivisionNone, sut.getDivision());
     }
 
+
+    public void testGetGenderString_男性(){
+        Customer sut = new Customer();
+        sut.mGender = Gender.GenderMale;
+        assertEquals("男性", sut.getGenderString());
+    }
+
+    public void testGetGenderString_女性(){
+        Customer sut = new Customer();
+        sut.mGender = Gender.GenderFemale;
+        assertEquals("女性", sut.getGenderString());
+    }
+
+
+    public void testGetDivisionString_F1層(){
+        Customer sut = new Customer();
+        sut.mGender = Gender.GenderFemale;
+        sut.mAge = 20;
+        assertEquals("F1層", sut.getDivisionString());
+    }
+
+    public void testGetDivisionString_M3層(){
+        Customer sut = new Customer();
+        sut.mGender = Gender.GenderMale;
+        sut.mAge = 50;
+        assertEquals("M3層", sut.getDivisionString());
+    }
+
 }
