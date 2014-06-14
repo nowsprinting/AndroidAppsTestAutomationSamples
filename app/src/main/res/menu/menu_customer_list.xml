@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--suppress ALL -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/button_add"
+        android:icon="@android:drawable/ic_input_add"
+        android:title="add"
+        android:showAsAction="always"
+        android:onClick="addCustomer" />
+</menu>

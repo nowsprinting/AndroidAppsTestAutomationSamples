@@ -2,13 +2,16 @@ package com.nowsprinting.hellotesting.app;
 
 import android.os.Bundle;
 import android.app.Fragment;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.NumberPicker;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import com.nowsprinting.hellotesting.app.models.Customer;
 import com.nowsprinting.hellotesting.app.models.Gender;
@@ -54,24 +57,72 @@ public class CustomerDetailFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_customer_detail, container, false);
+
+        //名前
+        EditText nameEditText = (EditText)rootView.findViewById(R.id.name);
+        nameEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                mItem.setName(s.toString());
+            }
+            @Override
+            public void afterTextChanged(Editable s) {}
+        });
+
+        //メール
+        EditText mailEditText = (EditText)rootView.findViewById(R.id.email);
+        mailEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                mItem.setMail(s.toString());
+            }
+            @Override
+            public void afterTextChanged(Editable s) {}
+        });
+
+        //性別
+        RadioGroup genderRadio = (RadioGroup)rootView.findViewById(R.id.gender);
+        genderRadio.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if(checkedId==R.id.genderFemale){
+                    mItem.setGender(Gender.GenderFemale);
+                }else{
+                    mItem.setGender(Gender.GenderMale);
+                }
+            }
+        });
+
+        //年齢
         NumberPicker agePicker = (NumberPicker)rootView.findViewById(R.id.agePicker);
         agePicker.setMaxValue(120);
         agePicker.setMinValue(4);
+        agePicker.setWrapSelectorWheel(false);
+        agePicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener(){
+            @Override
+            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                mItem.setAge(newVal);
+            }
+        });
 
         // Show the dummy content as text in a TextView.
         if (mItem != null) {
             if(mItem.getName()!=null){
-                ((EditText)rootView.findViewById(R.id.name)).setText(mItem.getName());
+                nameEditText.setText(mItem.getName());
             }
             if(mItem.getMail()!=null){
-                ((EditText)rootView.findViewById(R.id.email)).setText(mItem.getMail());
+                mailEditText.setText(mItem.getMail());
             }
             if(mItem.getGender()==Gender.GenderMale){
-                ((RadioGroup)rootView.findViewById(R.id.gender)).check(R.id.genderMale);
+                genderRadio.check(R.id.genderMale);
             }else{
-                ((RadioGroup)rootView.findViewById(R.id.gender)).check(R.id.genderFemale);
+                genderRadio.check(R.id.genderFemale);
             }
-            if(mItem.getAge()>=4){
+            if(mItem.getAge()!=null && mItem.getAge()>=4){
                 agePicker.setValue(mItem.getAge());
             }
         }

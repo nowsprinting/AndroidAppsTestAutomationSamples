@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 
 /**
@@ -49,6 +51,13 @@ public class CustomerDetailActivity extends Activity {
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_customer_detail, menu);
+        return true;
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == android.R.id.home) {
@@ -62,5 +71,13 @@ public class CustomerDetailActivity extends Activity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * ActionBarの"preview"ボタンタップ
+     * @param item
+     */
+    public void preview(MenuItem item){
+        //TODO:
     }
 }

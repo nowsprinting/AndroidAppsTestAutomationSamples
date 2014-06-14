@@ -3,6 +3,9 @@ package com.nowsprinting.hellotesting.app;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 
 /**
  * An activity representing a list of Customers. This activity
@@ -51,6 +54,13 @@ public class CustomerListActivity extends Activity
         // TODO: If exposing deep links into your app, handle intents here.
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_customer_list, menu);
+        return true;
+    }
+
     /**
      * Callback method from {@link CustomerListFragment.Callbacks}
      * indicating that the item with the given ID was selected.
@@ -76,5 +86,14 @@ public class CustomerListActivity extends Activity
             detailIntent.putExtra(CustomerDetailFragment.ARG_ITEM_ID, id);
             startActivity(detailIntent);
         }
+    }
+
+    /**
+     * ActionBarの"Add"ボタンタップ
+     * @param item
+     */
+    public void addCustomer(MenuItem item){
+        String newCustomerId = CustomerContent.addCustomer();
+        onItemSelected(newCustomerId);
     }
 }

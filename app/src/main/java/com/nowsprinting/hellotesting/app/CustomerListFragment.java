@@ -38,6 +38,11 @@ public class CustomerListFragment extends ListFragment {
     private int mActivatedPosition = ListView.INVALID_POSITION;
 
     /**
+     * 顧客リストのアダプタ
+     */
+    ArrayAdapter<Customer> mCustomerAdapter;
+
+    /**
      * A callback interface that all activities containing this fragment must
      * implement. This mechanism allows activities to be notified of item
      * selections.
@@ -70,12 +75,12 @@ public class CustomerListFragment extends ListFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // TODO: replace with a real list adapter.
-        setListAdapter(new ArrayAdapter<Customer>(
+        mCustomerAdapter = new ArrayAdapter<Customer>(
                 getActivity(),
                 android.R.layout.simple_list_item_activated_1,
                 android.R.id.text1,
-                CustomerContent.ITEMS));
+                CustomerContent.ITEMS);
+        setListAdapter(mCustomerAdapter);
     }
 
     @Override
@@ -147,5 +152,15 @@ public class CustomerListFragment extends ListFragment {
         }
 
         mActivatedPosition = position;
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+
+        //リストを更新
+        if(mCustomerAdapter!=null){
+            mCustomerAdapter.notifyDataSetChanged();
+        }
     }
 }

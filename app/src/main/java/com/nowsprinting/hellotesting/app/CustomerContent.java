@@ -30,11 +30,13 @@ public class CustomerContent {
         ITEM_MAP.put(customer.getId(), customer);
     }
 
-    //TODO: It's Dummy
-    static {
-        // Add 3 sample items.
-        addItem(new Customer("Newton Geizler", Gender.GenderMale, 35));
-        addItem(new Customer("Hermann Gottlieb", Gender.GenderMale, 34));
-        addItem(new Customer("Mako Mori", Gender.GenderFemale, 22));
+    /**
+     * 顧客を追加し、そのidを返す
+     * @return 追加した顧客のid
+     */
+    public static String addCustomer(){
+        Customer newCustomer = new Customer();
+        addItem(newCustomer);
+        return newCustomer.getId();
     }
 }
