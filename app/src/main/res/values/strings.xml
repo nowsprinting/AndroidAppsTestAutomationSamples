@@ -9,5 +9,9 @@
     <string name="labelAge">年齢</string>
     <string name="labelGenderMale">男性</string>
     <string name="labelGenderFemale">女性</string>
+    <string name="descriptionName">name textfield</string>
+    <string name="descriptionEmail">mail textfield</string>
+    <string name="descriptionGender">gender segmentedcontrol</string>
+    <string name="descriptionAgePicker">age pickerview</string>
 
 </resources>

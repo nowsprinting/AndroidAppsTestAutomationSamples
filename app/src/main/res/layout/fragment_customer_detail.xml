@@ -23,6 +23,7 @@
             android:layout_height="wrap_content"
             android:inputType="none"
             android:id="@+id/name"
+            android:contentDescription="@string/descriptionName"
             android:layout_column="1"
             android:layout_span="3" />
     </TableRow>
@@ -41,6 +42,7 @@
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
             android:id="@+id/email"
+            android:contentDescription="@string/descriptionEmail"
             android:layout_column="1"
             android:layout_span="3" />
     </TableRow>
@@ -58,6 +60,7 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:id="@+id/gender"
+            android:contentDescription="@string/descriptionGender"
             android:orientation="horizontal"
             android:layout_column="1">
 
@@ -88,6 +91,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/agePicker"
+            android:contentDescription="@string/descriptionAgePicker"
             android:layout_column="1"
             android:layout_span="3" />
     </TableRow>
