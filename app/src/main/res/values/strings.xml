@@ -13,5 +13,6 @@
     <string name="descriptionEmail">mail textfield</string>
     <string name="descriptionGender">gender segmentedcontrol</string>
     <string name="descriptionAgePicker">age pickerview</string>
+    <string name="title_activity_customet_preview">CustometPreviewActivity</string>
 
 </resources>

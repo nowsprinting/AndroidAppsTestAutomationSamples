@@ -52,7 +52,7 @@ public class Customer {
      * @retuen 該当するマーケティング区分
      */
     public Division getDivision(){
-        if(mAge<=3){
+        if(mAge==null || mAge<=3){
             return Division.DivisionNone;
 
         }else if(mAge<=12){
@@ -105,6 +105,17 @@ public class Customer {
                 return "女性";
         }
         return "";
+    }
+
+    /**
+     * 年齢を文字列で返す
+     */
+    public String getAgeString() {
+        if(mAge!=null){
+            return mAge.toString();
+        }else{
+            return "NaN";
+        }
     }
 
     /**

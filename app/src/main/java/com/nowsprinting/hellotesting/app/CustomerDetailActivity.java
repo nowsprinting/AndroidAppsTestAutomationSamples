@@ -19,6 +19,8 @@ import android.view.MenuItem;
  */
 public class CustomerDetailActivity extends Activity {
 
+    String mCustomerId;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,11 +39,12 @@ public class CustomerDetailActivity extends Activity {
         // http://developer.android.com/guide/components/fragments.html
         //
         if (savedInstanceState == null) {
+            mCustomerId = getIntent().getStringExtra(CustomerDetailFragment.ARG_ITEM_ID);
+
             // Create the detail fragment and add it to the activity
             // using a fragment transaction.
             Bundle arguments = new Bundle();
-            arguments.putString(CustomerDetailFragment.ARG_ITEM_ID,
-                    getIntent().getStringExtra(CustomerDetailFragment.ARG_ITEM_ID));
+            arguments.putString(CustomerDetailFragment.ARG_ITEM_ID, mCustomerId);
             CustomerDetailFragment fragment = new CustomerDetailFragment();
             fragment.setArguments(arguments);
             getFragmentManager().beginTransaction()
@@ -78,6 +81,8 @@ public class CustomerDetailActivity extends Activity {
      * @param item
      */
     public void preview(MenuItem item){
-        //TODO:
+        Intent previewIntent = new Intent(this, CustomerPreviewActivity.class);
+        previewIntent.putExtra(CustomerPreviewFragment.ARG_ITEM_ID, mCustomerId);
+        startActivity(previewIntent);
     }
 }

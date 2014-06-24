@@ -24,6 +24,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".CustomerListActivity" />
         </activity>
+        <activity
+            android:name=".CustomerPreviewActivity"
+            android:label="@string/title_activity_customet_preview" >
+        </activity>
     </application>
 
 </manifest>
