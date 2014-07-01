@@ -38,4 +38,8 @@ proguard/
 Thumbs.db
 
 # MonkeyTalk
-app/libs-monkeytalk/
+monkeytalk-agent-*.jar
+MonkeyTalk/libs/
+MonkeyTalk/reports/
+MonkeyTalk/screenshots/
+
