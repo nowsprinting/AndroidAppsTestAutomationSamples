@@ -11,8 +11,8 @@ AndroidAppsTestAutomationSamples
 - Android SDK Build-tools r19.1
 - Android SDK 4.4.2(API level 19)
 - Android NDK r9d(March 2014)
-- Gradle 1.12 + Gradle plugin for Android 0.11.1
-- Android Studio 0.6.1
+- Gradle 1.12 + Gradle plugin for Android 0.12.1
+- Android Studio 0.8.2
 
 
 ##ライセンス
