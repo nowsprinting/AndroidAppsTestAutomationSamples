@@ -1,7 +1,9 @@
-AndroidAppsTestAutomationSamples
-================================
+#@IT連載『スマホ向け無料システムテスト自動化ツール』サンプルコード for Android
+[![Build Status](https://travis-ci.org/nowsprinting/AndroidAppsTestAutomationSamples.svg?branch=master)](https://travis-ci.org/nowsprinting/AndroidAppsTestAutomationSamples)
 
-@IT連載『Android/iOS システムテスト自動化ツール徹底比較』（仮）サンプルコード for Android
+
+##連載インデックス
+1. [システムテスト自動化の基礎知識とMonkeyTalkの使い方](http://www.atmarkit.co.jp/ait/articles/1407/16/news037.html)
 
 
 ##ビルド確認環境
@@ -10,7 +12,6 @@ AndroidAppsTestAutomationSamples
 - Android SDK Platform-tools r19.0.2
 - Android SDK Build-tools r19.1
 - Android SDK 4.4.2(API level 19)
-- Android NDK r9d(March 2014)
 - Gradle 1.12 + Gradle plugin for Android 0.12.1
 - Android Studio 0.8.2
 
