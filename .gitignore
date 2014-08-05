@@ -44,7 +44,6 @@ proguard/
 .idea/scopes/scope_settings.xml
 
 !.idea/templateLanguages.xml
-!.idea/vcs.xml
 
 # Each OS work files
 .DS_Store
