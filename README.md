@@ -7,7 +7,7 @@
 
 
 ##ビルド確認環境
-- Mac OS X 10.8.5, JRE 1.6.0_65
+- Mac OS X 10.8.5, JRE 1.6.0_65 / Mac OS X 10.9.4, JRE 1.7.0_65 / Windows 8.1 Pro, JRE 1.7.0_65
 - Android SDK Tools r22.6.4
 - Android SDK Platform-tools r19.0.2
 - Android SDK Build-tools r19.1
