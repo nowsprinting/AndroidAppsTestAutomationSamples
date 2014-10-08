@@ -3,7 +3,7 @@
 
 
 ##連載インデックス
-1. [システムテスト自動化の基礎知識とMonkeyTalkの使い方](http://www.atmarkit.co.jp/ait/articles/1407/16/news037.html)
+- [「スマホ向け無料システムテスト自動化ツール」最新記事一覧 - ITmedia Keywords](http://www.atmarkit.co.jp/ait/kw/smapho_testtool.html)
 
 
 ##ビルド確認環境
