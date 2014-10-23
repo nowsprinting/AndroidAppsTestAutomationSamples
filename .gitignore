@@ -55,3 +55,6 @@ MonkeyTalk/libs/
 MonkeyTalk/reports/
 MonkeyTalk/screenshots/
 
+# Calabash
+.irb-history
+

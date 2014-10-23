@@ -21,9 +21,19 @@ android {
         }
     }
 
+    signingConfigs {
+        myConfig {
+            storeFile file("../sample.keystore")
+            keyPassword "sample"
+            keyAlias "atmarkit"
+            storePassword "atmarkit"
+        }
+    }
+
     buildTypes {
         release {
-            runProguard false
+            signingConfig signingConfigs.myConfig
+            runProguard true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
