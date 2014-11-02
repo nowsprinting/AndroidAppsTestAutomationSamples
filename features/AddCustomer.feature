@@ -10,7 +10,7 @@ Feature: Add customer
     Given I press "button_add"
 
     When I enter text "ほむら" into field with id "name"
-    And  I enter text "homumado@madoka.com" into field with id "email"
+    And  I enter text "homumado@example.com" into field with id "email"
     And  I press "genderFemale"
 
     Then I should see "ほむら"
