@@ -12,7 +12,17 @@ android {
         versionName "1.0"
     }
 
+    signingConfigs {
+        calabash {
+            storeFile file("../sample.keystore")
+            keyPassword "sample"
+            keyAlias "atmarkit"	
+            storePassword "atmarkit"
+        }
+    }
+
     productFlavors {
+        def calabashSigningVariable = signingConfigs.calabash
         app {
             applicationId "com.nowsprinting.hellotesting.app"
         }
@@ -21,6 +31,7 @@ android {
         }
         calabash {
             applicationId "com.nowsprinting.hellotesting.calabash"
+            signingConfig calabashSigningVariable
         }
     }
 
