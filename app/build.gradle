@@ -16,7 +16,7 @@ android {
         calabash {
             storeFile file("../sample.keystore")
             keyPassword "sample"
-            keyAlias "atmarkit"	
+            keyAlias "atmarkit"
             storePassword "atmarkit"
         }
     }
