@@ -12,28 +12,21 @@ android {
         versionName "1.0"
     }
 
-	productFlavors {
+    productFlavors {
         app {
             applicationId "com.nowsprinting.hellotesting.app"
         }
         monkeytalk {
             applicationId "com.nowsprinting.hellotesting.monkeytalk"
         }
-    }
-
-    signingConfigs {
-        myConfig {
-            storeFile file("../sample.keystore")
-            keyPassword "sample"
-            keyAlias "atmarkit"
-            storePassword "atmarkit"
+        calabash {
+            applicationId "com.nowsprinting.hellotesting.calabash"
         }
     }
 
     buildTypes {
         release {
-            signingConfig signingConfigs.myConfig
-            runProguard true
+            runProguard false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
