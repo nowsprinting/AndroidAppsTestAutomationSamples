@@ -1,0 +1,29 @@
+// JavaソースコードのエンコーディングをUTF-8とする。
+def defaultEncoding = 'UTF-8'
+tasks.withType(AbstractCompile) each { it.options.encoding = defaultEncoding }
+
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Appiumクライアントライブラリを利用するための宣言
+    testCompile 'io.appium:java-client:2.1.0'
+}
+
+// IDEにEclipseを使う場合の設定
+apply plugin: 'eclipse'
+
+// EclispeでもJavaソースコードをUTF-8で解釈するようにする。
+// 参考URL: https://issues.gradle.org/browse/GRADLE-1010
+eclipseJdt << {
+    def f = file('.settings/org.eclipse.core.resources.prefs')
+    f.text = """eclipse.preferences.version=1
+               |encoding/<project>=${defaultEncoding}""".stripMargin()
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.1'
+}
