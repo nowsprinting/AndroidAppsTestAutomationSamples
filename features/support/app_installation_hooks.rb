@@ -2,6 +2,7 @@ require 'calabash-android/management/app_installation'
 
 AfterConfiguration do |config|
   FeatureNameMemory.feature_name = nil
+  FeatureNameMemory.scenario = nil
 end
 
 Before do |scenario|
@@ -23,6 +24,7 @@ Before do |scenario|
     install_app(ENV["TEST_APP_PATH"])
     install_app(ENV["APP_PATH"])
     FeatureNameMemory.feature_name = feature_name
+    FeatureNameMemory.scenario = scenario
     FeatureNameMemory.invocation = 1
   else
     FeatureNameMemory.invocation += 1
@@ -32,5 +34,6 @@ end
 FeatureNameMemory = Class.new
 class << FeatureNameMemory
   @feature_name = nil
-  attr_accessor :feature_name, :invocation
+  @scenario = nil
+  attr_accessor :feature_name, :scenario, :invocation
 end

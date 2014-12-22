@@ -5,6 +5,7 @@ Feature: Add customer
   I want to add customer data and watch it
 
 
+  @basic
   Scenario: Add customer information and preview it
 
     Given I press "button_add"
