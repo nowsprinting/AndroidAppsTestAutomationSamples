@@ -26,7 +26,7 @@
         </activity>
         <activity
             android:name=".CustomerPreviewActivity"
-            android:label="@string/title_activity_customet_preview" >
+            android:label="@string/title_activity_customer_preview" >
         </activity>
     </application>
 
