@@ -1,3 +1,5 @@
+#encoding: utf-8
+
 Feature: Specify by example table
 
   In order to define specification collaboratively with business stakeholders

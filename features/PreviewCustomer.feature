@@ -1,3 +1,5 @@
+#encoding: utf-8
+
 Feature: Preview customer
 
   In order to know the basics of Calabash-Android

@@ -1,3 +1,5 @@
+#encoding: utf-8
+
 Feature: Add customer
 
   In order to know the basics of Calabash-Android
