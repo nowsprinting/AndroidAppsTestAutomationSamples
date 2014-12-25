@@ -27,7 +27,7 @@ When(/^I enter customer information and preview it as follows:$/) do |table|
 
   table.hashes().each do |raw_data|
 
-    # Input on AddCustomer
+    # Input on Customer Detail
     enterText("name",  raw_data["name"])
     enterText("email", raw_data["email"])
     chooseRadioButton(raw_data["gender"])
@@ -53,9 +53,9 @@ When(/^I enter customer information and preview it as follows:$/) do |table|
 
     validateWebViewItem(raw_data["division"], "division")
 
-    # Move back to AddCustomer and tear down
+    # Move back to Customer Detail and tear down
     press_back_button
-    waitForAddCustomerScreen
+    waitForCustomerDetailScreen
     clearText("name")
     clearText("email")
 
@@ -128,6 +128,6 @@ def clearText(id)
 end
 
 
-def waitForAddCustomerScreen
+def waitForCustomerDetailScreen
   wait_for_element_exists("EditText id:'name'")
 end
