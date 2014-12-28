@@ -1,3 +1,5 @@
+#encoding: utf-8
+
 Feature: Add customer
 
   In order to know the basics of Calabash-Android
@@ -5,6 +7,7 @@ Feature: Add customer
   I want to add customer data and watch it
 
 
+  @basic
   Scenario: Add customer information and preview it
 
     Given I press "button_add"
