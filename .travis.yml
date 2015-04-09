@@ -13,7 +13,6 @@ android:
     - android-sdk-license-[0-9a-f]{8}
 
 before_script:
-  # Create and start emulator
   - echo no | android create avd --force -n test -t $ANDROID_TARGET --abi $ANDROID_ABI
   - emulator -avd test -no-skin -no-audio -no-window &
   - adb wait-for-device
@@ -22,3 +21,6 @@ before_script:
 script:
   - ./gradlew connectedAndroidTestAppDebug
 
+notifications:
+  slack:
+    secure: kLJM6ofuAxgZ2y8EY3VCWTfnpm7WtJ32EiYh8g+9D5RijQzHKIuIUM9ULvCMcGyjUHjzIlPHunLn3JrsiNttJMqnp5QHUqzGID9V6j61N2brKJvuWA4G0aXQqAmW2YxbJhPSOKe58MPtiNyJkGpnFbjNTvZDI8E4Y2SMidE0Kwc=
