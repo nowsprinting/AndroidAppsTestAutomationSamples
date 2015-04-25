@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" >
+    <!--
+        Selendroidモードでもテストできるように、INTERNETパーミッションの利用を宣言する。
+        (*) Appiumモードでしかテストしないのであれば不要。
+    -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!--
+        Appiumモードで、WebViewのテストができるようにするためには、
+
+            WebView.setWebContentsDebuggingEnabled(true);
+
+        をWebViewロード前に呼び出す必要がある。
+        このサンプルでは、独自Applicationクラス実装 WebViewDebuggableApplication を用意し、その中で、
+        上記コードを呼び出している。
+
+        (*) 以下のケースでは不要。
+            - Selendroidモードでテストする場合(WebViewのテストをする場合も含む)
+            - Appiumモードでテストするが、WebViewのテストはしない場合
+    -->
+    <application android:name="com.nowsprinting.hellotesting.app.WebViewDebuggableApplication" />
+</manifest>

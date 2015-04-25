@@ -37,6 +37,9 @@ android {
             applicationId "com.nowsprinting.hellotesting.calabash"
             signingConfig calabashSigningVariable
         }
+        appium {
+            applicationId "com.nowsprinting.hellotesting.appium"
+        }
     }
 
     buildTypes {
