@@ -1,8 +1,8 @@
+apply plugin: 'java'
+
 // JavaソースコードのエンコーディングをUTF-8とする。
 def defaultEncoding = 'UTF-8'
-tasks.withType(AbstractCompile) each { it.options.encoding = defaultEncoding }
-
-apply plugin: 'java'
+tasks.withType(AbstractCompile).each { it.options.encoding = defaultEncoding }
 
 repositories {
     mavenCentral()
