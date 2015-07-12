@@ -145,7 +145,10 @@ public class CustomerDetailTest extends UiAutomatorTestCase {
             mMaleRadioButtonInDetailScreen.click();
             // 年齢欄に数字を入力してから、年齢入力を確定させるため、年齢入力欄をタップする。
             mAgeTextFieldInDetailScreen.setText(inputAge);
-            mAgeTextFieldInDetailScreen.click();
+            if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.KITKAT) {
+                // 年齢入力欄をタップする必要があるのはKitKat以下の場合のみ。
+                mAgeTextFieldInDetailScreen.click();
+            }
             // previewボタンを押して、プレビュー画面に切り替わるまで待つ。
             mPreviewButtonInDetailScreen.clickAndWaitForNewWindow(WAIT_TIMEOUT);
 

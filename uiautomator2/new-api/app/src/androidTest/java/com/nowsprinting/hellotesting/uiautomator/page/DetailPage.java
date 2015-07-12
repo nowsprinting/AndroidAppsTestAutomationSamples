@@ -94,6 +94,7 @@ public class DetailPage {
         // 年齢欄に数字を入力してから、年齢入力を確定させるため、年齢入力欄をタップする。
         if (age != null) {
             findAgeTextField().setText(age);
+            mUiDevice.findObject(By.desc("name textfield")).click();
         }
         return this;
     }
